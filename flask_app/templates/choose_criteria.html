@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% extends "base.html" %} 
+    {% block content %}
+    <div class="container mt 50px" style=" margin-bottom: 10px;">
+        <form action="/choose" method="post">
+            <div class="form-group">
+                <label for="min_price">Min Price</label>
+                <input type="number" class="form-control" id="min_price" name="min_price">
+            </div>
+            <div class="form-group">
+                <label for="max_price">Max Price</label>
+                <input type="number" class="form-control" id="max_price" name="max_price">
+            </div>
+
+            <div class="form-group">
+                <label for="min_surface">Min Surface</label>
+                <input type="number" class="form-control" id="min_surface" name="min_surface">
+            </div>
+            <div class="form-group">
+                <label for="max_surface">Max Surface</label>
+                <input type="number" class="form-control" id="max_surface" name="max_surface">
+            </div>
+
+            <div class="form-group">
+                <label for="min_beds">Min Beds</label>
+                <input type="number" class="form-control" id="min_beds" name="min_beds">
+            </div>
+            <div class="form-group">
+                <label for="max_beds">Max Beds</label>
+                <input type="number" class="form-control" id="max_beds" name="max_beds">
+            </div>
+
+            <div class="form-group">
+                <label for="min_bathroom">Min Bathroom</label>
+                <input type="number" class="form-control" id="min_bathroom" name="min_bathroom">
+            </div>
+            <div class="form-group">
+                <label for="max_bathroom">Max Bathroom</label>
+                <input type="number" class="form-control" id="max_bathroom" name="max_bathroom">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select class="form-control" id="location" name="location">
+                    <option value="Tunis">Tunis</option>
+                    <option value="Ariana"> Ariana</option>
+                    <option value="Beja"> Beja</option>
+                    <option value="Ben Arous"> Ben Arous</option>
+                    <option value="Bizerte"> Bizerte</option>
+                    <option value="Gabes"> Gabes</option>
+                    <option value="Gafsa"> Gafsa</option>
+                    <option value="Jendouba"> Jendouba</option>
+                    <option value="Kairouan"> Kairouan</option>
+                    <option value="Kasserine"> Kasserine</option>
+                    <option value="kebili"> kebili</option>
+                    <option value="Kef"> Kef</option>
+                    <option value="Mahdia"> Mahdia</option>
+                    <option value="Manouba"> Manouba</option>
+                    <option value="Mednine"> Mednine</option>
+                    <option value="Monastir"> Monastir</option>
+                    <option value="Nabeul"> Nabeul</option>
+                    <option value="Sfax"> Sfax</option>
+                    <option value="Sidi Bouzid"> Sidi Bouzid</option>
+                    <option value="Siliana"> Siliana</option>
+                    <option value="Sousse"> Sousse</option>
+                    <option value="Tataouine"> Tataouine</option>
+                    <option value="Tozeur"> Tozeur</option>
+                    <option value="Zaghouan"> Zaghouan</option>
+                    <!-- Add other options here -->
+                </select>
+            </div>
+
+            <div class="form-group form-check form-check-inline">
+                <label>House Type :</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="house_type" value="house" id="house">
+                    <label class="form-check-label" for="house">House</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="house_type" value="apartment" id="apartment">
+                    <label class="form-check-label" for="apartment">Apartment</label>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="mortgage_validation">With Mortgage</label>
+                <input type="radio" name="mortage_validation" value="1">
+            </div>
+
+            <div class="form-group">
+                <label for="mortage_validation">Without Mortgage:</label>
+                <input type="radio" name="mortage_validation" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="min_mortage_monthly">Min Monthly Mortgage:</label>
+                <input type="number" class="form-control" id="min_mortage_monthly" name="min_mortage_monthly">
+            </div>
+
+            <div class="form-group">
+                <label for="max_mortage_monthly">Max Monthly Mortgage</label>
+                <input type="number" class="form-control" id="max_mortage_monthly" name="max_mortage_monthly">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% endblock %}
+    <!-- Include Bootstrap JS and jQuery if needed -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

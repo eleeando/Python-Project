@@ -1,0 +1,88 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="container mt-5">
+    <div class="titleadmindash">
+        <img src="../static/img/adminpic.png" alt="">
+        <h1 class="mb-4">Admin Dashboard</h1>
+
+    </div>
+
+    <!-- Users Table -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Users</h3>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                        <th>Actions</th>
+
+                        <!-- Add more user fields as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through users and display each row -->
+                    {% for user in users %}
+                    {%if user.id!=1%}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.phone_number }}</td>
+                        <td>
+                            <form action="/delete/user/{{user.id}}" method="post"><button
+                                    class="btn btn-danger">delete</button></form>
+                        </td>
+                        <!-- Add more user fields as needed -->
+                    </tr>
+                    {%endif%}
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <!-- Pending House Images Table -->
+    <div class="row row-cols-3">
+        {%for house in houses%}
+        <a href="/house/admin/{{house.id}}">
+            <div class="card col" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='data_base_img/'+house.pic) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{house.type}}</h5>
+                    <p class="card-text">
+                    <p>
+                        <span> {{house.beds}} </span>bds | <span>{{house.bathroom}}</span> ba |
+                        <span>{{house.surface}}</span> m² for {{house.type}}
+                    </p>
+                    <p>{{house.description}}</p>
+                    <p>email:{{house.email}} <span></span></p>
+                    <p>phone number:{{house.phone_number}} <span></span> </p>
+                    </p>
+                    <div class="d-flex m-10">
+                        <form action="/delete/house/{{house.id}}" method="post">
+                            <button class="btn btn-danger m-10">Delete</button>
+                        </form>
+                        <form action="/validate/house/{{house.id}}" method="post">
+                            <button class="btn btn-success">Validate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {%endfor%}
+    </div>
+
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* styles.css */
+
+    .sub_page {
+        background-color: #f8f9fa;
+        color: #495057;
+    }
+
+    .heading_container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sale_container {
+        border: 1px solid #ddd;
+        padding: 15px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .sale_container:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-box img {
+        max-width: 100%;
+        height: auto;
+        max-height: 150px;
+    }
+
+    .detail-box {
+        margin-top: 10px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+</style>
+
+<body class="sub_page" style="padding-top: 100px;">
+
+    <!-- Sale section -->
+    <section class="sale_section layout_padding">
+        <div class="container-fluid">
+            <div class="heading_container text-center">
+                <h2>My Houses</h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the</p>
+            </div>
+
+        
+
+            </div>
+            <br>
+            <hr>
+            <div class="row aziz_container d-flex justify-content-around">
+                {% for house in houses %}
+                <a href="/house/{{house.id}}">
+                <div class="card p-2 mb-3" style="width: 28rem;">
+                    <img src="../static/data_base_img/{{ house.pic }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6>{{ house.price }}dt</h6>
+                        <p><span>{{ house.beds }}</span> bds | <span>{{ house.bathroom }}</span> ba |
+                            <span>{{ house.surface }}</span> m² {{ house.house_type }} for {{ house.type }}
+                        </p>
+                        <p>{{ house.description }}</p>
+                        <form action="/delete/house/{{ house.id }}" method="post">
+                            <button class="btn btn-danger mt-2">Delete</button>
+                        </form>
+
+                    </div>
+                </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Sale section -->
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+
+.carousel ,.img_align{
+    width: 950px;
+    height: 650px;
+    border-radius: 10px;
+ 
+}
+.container_carousel{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}

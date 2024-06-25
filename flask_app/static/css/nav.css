@@ -1,0 +1,263 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.body {
+	position: fixed;
+	overflow: visible;
+	top: 0;
+	font-size: 12px;
+	font-family: sans-serif;
+	background: #2c3e50;
+	width: 100%;
+	z-index: 100;
+}
+
+.nav {
+	margin: auto;
+	position: absolute;
+	display: flex;
+	/* gap:2px; */
+	/* justify-content: space-between; */
+	width: 80%;
+	height: 80px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+	z-index: 1;
+}
+
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    /* padding: 14px 16px; */
+    transition: 0.3s;
+}
+
+
+
+.animation {
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    background-color: #0077B6;
+    transition: 1s;
+}
+.nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 20px;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+
+.nav .start-home, a:nth-child(1):hover~.animation {
+	width: 80px;
+	left: 0;
+	background-color: #0077B6;
+}
+.nav .start-about, a:nth-child(2):hover~.animation {
+	width: 80px;
+	left: 80px;
+	background-color: #0077B6;
+}
+.nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 160px;
+	background-color: #0077B6;
+}
+.nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 160px;
+	left: 270px;
+	background-color: #0077B6;
+}
+.nav .start-contact, a:nth-child(5):hover~.animation {
+	width: 160px;
+	left: 450px;
+	background-color: #0077B6;
+}
+
+
+/* Styles for the new navigation items */
+.nav .start-item6, a:nth-child(6):hover~.animation {
+    width: 120px;
+    left: 620px;
+    background-color: #0077B6;
+}
+
+.nav .start-item7, a:nth-child(7):hover~.animation {
+    width: 140px;
+    left: 740px;
+    background-color: #0077B6;
+}
+
+.nav .start-item8, a:nth-child(8):hover~.animation {
+    width: 100px;
+    left: 860px;
+    background-color: #0077B6;
+}
+
+.nav .start-item9, a:nth-child(9):hover~.animation {
+    width: 100px;
+    left: 960px;
+    background-color: #0077B6;
+}
+
+.nav .start-item10, a:nth-child(10):hover~.animation {
+    width: 150px;
+    left: 1050px;
+    background-color: #0077B6;
+}
+
+/* .nav {
+	
+  
+	position: relative;
+	width: 1200px;
+	height: 80px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+} */
+.nav {
+    position: relative;
+    display: flex;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+
+.animation {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-color: #0077B6;
+    transition: 1s;
+}
+.nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+.nav .start-home, a:nth-child(1):hover~.animation {
+	width: 100%;
+	left: 0;
+	background-color: #0077B6;
+}
+/*
+.nav .start-about, a:nth-child(2):hover~.animation {
+	width: 80px;
+	left: 80px;
+	background-color: #0077B6;
+}
+.nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 160px;
+	background-color: #0077B6;
+}
+.nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 160px;
+	left: 270px;
+	background-color: #0077B6;
+}
+.nav .start-contact, a:nth-child(5):hover~.animation {
+	width: 160px;
+	left: 450px;
+	background-color: #0077B6;
+} */
+
+
+/* Styles for the new navigation items */
+/* .nav .start-item6, a:nth-child(6):hover~.animation {
+    width: 120px;
+    left: 620px;
+    background-color: #0077B6;
+}
+
+.nav .start-item7, a:nth-child(7):hover~.animation {
+    width: 140px;
+    left: 740px;
+    background-color: #0077B6;
+}
+
+.nav .start-item8, a:nth-child(8):hover~.animation {
+    width: 100px;
+    left: 860px;
+    background-color: #0077B6;
+}
+
+.nav .start-item9, a:nth-child(9):hover~.animation {
+    width: 100px;
+    left: 960px;
+    background-color: #0077B6;
+}
+
+.nav .start-item10, a:nth-child(10):hover~.animation {
+    width: 150px;
+    left: 1050px;
+    background-color: #0077B6;
+} */
+
+.nav a:hover{
+	background-color: #0077B6;
+	border-radius: 10%;
+}
+/* .nav .start-home, a:nth-child(1) {
+
+	background-color: #0077B6;
+	border-radius: 10%;
+} */
+
+/* .nav .start-home, a:nth-child(1)::before {
+
+	background-color: #0077B6;
+	border-radius: 10%;
+}
+.nav .start-home, a:nth-child(1)::after {
+	background-color: crimson;
+	border-radius: 10%;
+} */
+
+
+
+
+
+

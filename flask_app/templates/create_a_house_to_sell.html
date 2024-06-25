@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell/Rent</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create_a_house_to_sell.css') }}">
+</head>
+
+<body class="sameh">
+    {%extends "base.html" %}
+    {%block content%}
+    <div class="container mt-5" style=" padding:100px;">
+        <h2>Put A House In Display for {{session.username}}</h2>
+        <form id="property-form" action="/create/house/sell" method="post">
+            <div class="form-group form-check form-check-inline">
+                <label>Property Type:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="type" value="sale" checked>
+                    <label class="form-check-label">Sell</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="type" value="rent">
+                    <label class="form-check-label">Rent</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-group form-check form-check-inline">
+                <label>Mortgage Validation:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mortage_validation" value="1" checked>
+                    <label class="form-check-label">With Mortgage</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mortage_validation" value="0">
+                    <label class="form-check-label">Without Mortgage</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mortage_monthly">Monthly Mortgage:</label>
+                <input type="number" class="form-control" id="mortage_monthly" name="mortage_monthly" min="0"
+                    placeholder="Enter monthly rent or mortgage">
+            </div>
+
+            <div class="form-group">
+                <label for="house-type">House Type:</label>
+                <select class="form-control" id="house-type" name="house_type">
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mortage_monthly">price :</label>
+                <input type="number" class="form-control" id="price" name="price" min="1"
+                    placeholder="Enter monthly rent or mortgage">
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select class="form-control" id="location" name="location">
+                    <!-- Add your location options here -->
+                    <option value="Tunis">Tunis</option>
+                    <option value="Ariana"> Ariana</option>
+                    <option value="Beja"> Beja</option>
+                    <option value="Ben Arous"> Ben Arous</option>
+                    <option value="Bizerte"> Bizerte</option>
+                    <option value="Gabes"> Gabes</option>
+                    <option value="Gafsa"> Gafsa</option>
+                    <option value="Jendouba"> Jendouba</option>
+                    <option value="Kairouan"> Kairouan</option>
+                    <option value="Kasserine"> Kasserine</option>
+                    <option value="kebili"> kebili</option>
+                    <option value="Kef"> Kef</option>
+                    <option value="Mahdia"> Mahdia</option>
+                    <option value="Manouba"> Manouba</option>
+                    <option value="Mednine"> Mednine</option>
+                    <option value="Monastir"> Monastir</option>
+                    <option value="Nabeul"> Nabeul</option>
+                    <option value="Sfax"> Sfax</option>
+                    <option value="Sidi Bouzid"> Sidi Bouzid</option>
+                    <option value="Siliana"> Siliana</option>
+                    <option value="Sousse"> Sousse</option>
+                    <option value="Tataouine"> Tataouine</option>
+                    <option value="Tozeur"> Tozeur</option>
+                    <option value="Zaghouan"> Zaghouan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mortage_monthly">Number of beds</label>
+                <input type="number" class="form-control"  name="beds" min="1"
+                    placeholder="Enter number of beds">
+            </div>
+
+            <div class="form-group">
+                <label for="mortage_monthly"> Number of bathrooms</label>
+                <input type="number" class="form-control"  name="bathroom" min="1"
+                    placeholder="Enter monthly rent or mortgage">
+            </div>
+            <div class="form-group">
+                <label for="mortage_monthly">Surface:</label>
+                <input type="number" class="form-control" id="mortage_monthly" name="surface" min="1"
+                    placeholder="Enter">
+            </div>
+            <div class="form-group">
+                <label for="mortage_monthly">description:</label>
+                <textarea class="form-control" id="mortage_monthly" name="description" rows="3"  min="1" placeholder="Enter Description"></textarea> 
+                    
+            </div>
+            <div class="text-center mb-5">
+                <button class="btn btn-info btn-lg w-100">Submit</button>
+            </div>
+        </form>
+    </div>
+    {%block footer%}
+    {% endblock %}
+    {% endblock %}
+    <!-- Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
